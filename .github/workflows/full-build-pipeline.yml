@@ -17,7 +17,7 @@
 #
 # Triggers:
 #   - Every push / PR to `main`
-#   - Weekly scheduled run (Monday 06:00 UTC) to catch regressions
+#   - Manual trigger via workflow_dispatch (gh workflow run)
 # ---------------------------------------------------------------
 
 name: Full Build Pipeline
@@ -27,6 +27,7 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
